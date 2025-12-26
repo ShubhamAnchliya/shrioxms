@@ -12,7 +12,8 @@ import Subscription from "./components/home/subscription";
 import WebResult from "./components/home/web-result";
 
 export const metadata: Metadata = {
-    title: "Awake Agency",
+    // title: "Awake Agency",
+      title: "Shrioxms",
 };
 
 

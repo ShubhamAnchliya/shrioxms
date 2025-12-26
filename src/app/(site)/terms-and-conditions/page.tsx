@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 export const metadata: Metadata = {
-    title: "Terms & Condition | Awake Agency",
+    // title: "Terms & Condition | Awake Agency",
+     title: "Terms & Condition | Shrioxms",
+    
 };
 
 export default function Page() {

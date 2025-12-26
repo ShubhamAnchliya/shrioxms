@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const headerData = [
-   { label: 'Why Us', href: '/#awards' },
+  { label: "Why Us", href: "/#awards" },
   { label: "About us", href: "/#aboutus" },
   { label: "Services", href: "/#services" },
   { label: "Work", href: "/#work" },
@@ -13,7 +13,7 @@ const headerData = [
 
 const footerData = {
   brand: {
-    name: "Awake",
+    name: "Shrioxms",
     tagline:
       "Empowering businesses with innovative solutions. Let's create something amazing together.",
     socialLinks: [
@@ -60,11 +60,11 @@ const footerData = {
   },
   contactDetails: {
     name: "Contact Details",
-    address: "81 Rivington Street London EC2A 3AY",
-    email: "hello@awake.agency",
-    phone: "0105 192 3556",
+    address: "72, Aashirvad Parisar, Jaora, (M.P.), India",
+    email: "Info@Shrioxms.com",
+    phone: "1234567890",
   },
-  copyright: "©2025 Awake. All Rights Reserved",
+  copyright: "©2025 Shrioxms. All Rights Reserved",
 };
 
 export const GET = async () => {
