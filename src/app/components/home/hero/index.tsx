@@ -101,7 +101,7 @@ function HeroSection() {
                 </Link>
 
                 {/* --------------- avatar division -------------- */}
-                <div className="flex items-center gap-7">
+                {/* <div className="flex items-center gap-7">
                   <ul className="avatar flex flex-row items-center">
                     {avatarList?.avatarList?.map((items: any, index: any) => (
                       <li key={index} className="-mr-2 z-1 avatar-hover:ml-2">
@@ -116,16 +116,17 @@ function HeroSection() {
                       </li>
                     ))}
                   </ul>
-                  {/* -------------- Star rating division --------------- */}
+                  -------------- Star rating division ---------------
                   <div className="gap-1 flex flex-col">
                     <div>
                       <StarRating count={4} color="#F59E0B" />
                     </div>
                     <p className="text-sm font-normal text-dark_black/60 dark:text-white/60">
                       Trusted by 1000+ clients
+                      Trusted by clients
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
             </motion.div>
           </div>

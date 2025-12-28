@@ -12,10 +12,9 @@ import Subscription from "./components/home/subscription";
 import WebResult from "./components/home/web-result";
 
 export const metadata: Metadata = {
-    // title: "Awake Agency",
-      title: "Shrioxms",
+  // title: "Awake Agency",
+  title: "Shriox Management Solutions Pvt. Ltd.",
 };
-
 
 export default function Home() {
   return (
@@ -25,14 +24,18 @@ export default function Home() {
       {/* ---------------------Hero section Ends-----------------  */}
 
       {/* ---------------------Brand logo section Starts-----------------  */}
-      <Brand />
+      {/* <Brand /> */}
       {/* ---------------------Brand logo section Ends-----------------  */}
 
+      {/* ---------------------Achievements section (why us)Starts-----------------  */}
+      <Achievements />
+      {/* ---------------------Achievements section Ends-----------------  */}
+
       {/* ---------------------Web result section Starts-----------------  */}
-      <WebResult />
+      {/* <WebResult /> */}
       {/* ---------------------Web result section Ends-----------------  */}
 
-      {/* ---------------------Innovation section Starts-----------------  */}
+      {/* ---------------------Innovation section (services)Starts-----------------  */}
       <Innovation />
       {/* ---------------------Innovation section Ends-----------------  */}
 
@@ -40,7 +43,11 @@ export default function Home() {
       <OnlinePresence />
       {/* ---------------------Online presence section Ends-----------------  */}
 
-      {/* ---------------------Creative mind section Starts-----------------  */}
+      {/* ---------------------Web result section (about us)Starts-----------------  */}
+      <WebResult />
+      {/* ---------------------Web result section Ends-----------------  */}
+
+      {/* ---------------------Creative mind section (team) Starts-----------------  */}
       <CreativeMind />
       {/* ---------------------Creative mind section Ends-----------------  */}
 
@@ -57,12 +64,12 @@ export default function Home() {
       {/* ---------------------Faq section Ends-----------------  */}
 
       {/* ---------------------Achievements section Starts-----------------  */}
-      <Achievements />
+      {/* <Achievements /> */}
       {/* ---------------------Achievements section Ends-----------------  */}
 
       {/* ---------------------Solutions section Starts-----------------  */}
       <Solutions />
       {/* ---------------------Solutions section Ends-----------------  */}
     </main>
-  )
+  );
 }

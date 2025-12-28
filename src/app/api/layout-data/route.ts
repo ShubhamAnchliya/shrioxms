@@ -60,7 +60,8 @@ const footerData = {
   },
   contactDetails: {
     name: "Contact Details",
-    address: "72, Aashirvad Parisar, Jaora, (M.P.), India",
+    address: "72, Aashirvad Parisar,",
+    address1: "Jaora (M.P.), India",
     email: "Info@Shrioxms.com",
     phone: "1234567890",
   },
