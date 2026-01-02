@@ -41,14 +41,36 @@ function HeroSection() {
               // {...bottomAnimation}
               className="relative flex flex-col text-center items-center gap-4"
             >
-              <h1>
+              {/* <h1>
                 <TextGenerateEffect words="Human‑Centred Consulting, Empowered by" />
                 <TextGenerateEffect
                   words="Smart Technology - AI"
                   delay={0.8}
                   className="italic font-normal instrument-font"
                 />
+              </h1> */}
+
+              <h1>
+                {/* Line 1: Human-Centred Consulting, */}
+                <span className="block">
+                  <TextGenerateEffect words="Human‑Centred Consulting," />
+                </span>
+
+                {/* Line 2: Empowered by (Added delay so it starts after Line 1) */}
+                <span className="block">
+                  <TextGenerateEffect words="Empowered by" delay={0.5} />
+                </span>
+
+                {/* Line 3: Smart Technology - AI (Existing styles preserved) */}
+                <span className="block">
+                  <TextGenerateEffect
+                    words="Smart Technology - AI"
+                    delay={1.0}
+                    className="italic font-normal instrument-font"
+                  />
+                </span>
               </h1>
+
               <p className="max-w-3/5 text-dark_black/70 dark:text-white/70">
                 At Shriox, we combine human insight with the selective use of
                 advanced tools like Artificial Intelligence. AI is never a
@@ -103,34 +125,6 @@ function HeroSection() {
                     />
                   </svg>
                 </Link>
-
-                {/* --------------- avatar division -------------- */}
-                {/* <div className="flex items-center gap-7">
-                  <ul className="avatar flex flex-row items-center">
-                    {avatarList?.avatarList?.map((items: any, index: any) => (
-                      <li key={index} className="-mr-2 z-1 avatar-hover:ml-2">
-                        <Image
-                          src={items.image}
-                          alt="Image"
-                          width={44}
-                          height={44}
-                          quality={100}
-                          className="rounded-full border-2 border-white"
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                  -------------- Star rating division ---------------
-                  <div className="gap-1 flex flex-col">
-                    <div>
-                      <StarRating count={4} color="#F59E0B" />
-                    </div>
-                    <p className="text-sm font-normal text-dark_black/60 dark:text-white/60">
-                      Trusted by 1000+ clients
-                      Trusted by clients
-                    </p>
-                  </div>
-                </div> */}
               </div>
             </motion.div>
           </div>
