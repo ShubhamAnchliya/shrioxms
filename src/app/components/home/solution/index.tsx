@@ -15,12 +15,12 @@ function Solutions() {
   };
 
   return (
-    <section>
+    <section className="flex justify-center">
       <div className="2xl:py-20 py-11">
         <div className="container">
           <div
             ref={ref}
-            className="py-16 md:py-28 px-6 border border-dark_black/10 rounded-3xl bg-[linear-gradient(90deg,#CDEFFB_0%,#FFFFFF_33.23%,#FFFFFF_65.77%,#FDEECB_100%)] backdrop-blur-[200px] dark:opacity-80"
+            className="py-15 md:py-18 px-8 border border-dark_black/10 rounded-3xl bg-[linear-gradient(90deg,#CDEFFB_0%,#FFFFFF_33.23%,#FFFFFF_65.77%,#FDEECB_100%)] backdrop-blur-[200px] dark:opacity-80"
           >
             <motion.div
               {...bottomAnimation}
@@ -28,17 +28,13 @@ function Solutions() {
             >
               <div className="flex flex-col gap-3 items-center text-center">
                 <h2 className="text-3xl md:text-5xl dark:text-dark_black">
-                  <TextGenerateEffect words="Innovative solutions for" />
-                  <TextGenerateEffect
-                    words="bold brands"
-                    delay={1}
-                    className="italic font-normal instrument-font"
-                  />
+                  Our Promise
                 </h2>
                 <p className="dark:text-dark_black">
-                  Looking to elevate your brand? We craft immersive experiences
-                  that captivate, engage, and make your business unforgettable
-                  in every interaction.
+                  With Shriox, you gain more than a consultant — you gain a
+                  partner who understands your challenges, empowers your
+                  decisions, and ensures your ERP ecosystem works seamlessly,
+                  today and tomorrow.
                 </p>
               </div>
               <Link

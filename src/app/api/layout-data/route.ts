@@ -1,14 +1,14 @@
 import { NextResponse } from "next/server";
 
 const headerData = [
-  { label: "Why Us", href: "/#awards" },
+  { label: "Why Us", href: "/#whyus" },
   { label: "Services", href: "/#services" },
   { label: "Work", href: "/#work" },
   { label: "About us", href: "/#aboutus" },
   { label: "Team", href: "/#team" },
   { label: "Pricing", href: "/#pricing" },
   // { label: 'Awards', href: '/#awards' },
-  { label: 'Contact', href: '/contact' },
+  { label: "Contact", href: "/contact" },
 ];
 
 const footerData = {
@@ -43,6 +43,7 @@ const footerData = {
     name: "Sitemap",
     links: [
       { name: "Contact us", url: "/contact" },
+      { name: "Why us", url: "/#whyus" },
       { name: "About us", url: "/#aboutus" },
       { name: "Work", url: "/#work" },
       { name: "Services", url: "/#services" },

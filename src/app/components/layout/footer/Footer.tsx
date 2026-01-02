@@ -22,13 +22,13 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="xl:pt-20 pb-6">
+    <footer className="xl:pt-10 pb-6">
       <div className="container">
         <div className="flex flex-col xl:flex-row py-16 gap-10 justify-between border-b border-dark_black/10 dark:border-white/10">
           <div className="flex flex-col gap-6 max-w-md">
             <Logo />
             <p className="opacity-60">{footerData?.brand?.tagline}</p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               {footerData?.brand?.socialLinks.map((item: any, index: any) => {
                 return (
                   <Link
@@ -55,7 +55,7 @@ const Footer = () => {
                   </Link>
                 );
               })}
-            </div>
+            </div> */}
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
             <div className="flex flex-col gap-4">
@@ -73,7 +73,7 @@ const Footer = () => {
                 })}
               </ul>
             </div>
-            <div className="flex flex-col gap-4">
+            {/* <div className="flex flex-col gap-4">
               <p className="font-medium">{footerData?.otherPages?.name}</p>
               <ul className="flex flex-col gap-3">
                 {footerData?.otherPages?.links.map((item: any, index: any) => {
@@ -87,7 +87,7 @@ const Footer = () => {
                   );
                 })}
               </ul>
-            </div>
+            </div> */}
             <div className="flex flex-col gap-4">
               <p className="font-medium">{footerData?.contactDetails?.name}</p>
               <p className="text-dark_black/60 dark:text-white/60">

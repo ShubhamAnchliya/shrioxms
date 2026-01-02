@@ -42,17 +42,21 @@ function HeroSection() {
               className="relative flex flex-col text-center items-center gap-4"
             >
               <h1>
-                <TextGenerateEffect words="Building bold brands with" />
+                <TextGenerateEffect words="Human‑Centred Consulting, Empowered by" />
                 <TextGenerateEffect
-                  words="thoughtful design"
+                  words="Smart Technology - AI"
                   delay={0.8}
                   className="italic font-normal instrument-font"
                 />
               </h1>
-              <p className="max-w-38 text-dark_black/60 dark:text-white/60">
-                At Shrioxms, we help small startups tackle the world’s biggest
-                challenges with tailored solutions, guiding you from strategy to
-                success in a competitive market.
+              <p className="max-w-3/5 text-dark_black/70 dark:text-white/70">
+                At Shriox, we combine human insight with the selective use of
+                advanced tools like Artificial Intelligence. AI is never a
+                replacement for judgment — it’s a supportive force we use only
+                when it adds real value. Whether it’s analysing complex data,
+                streamlining processes, or forecasting trends, we deploy AI
+                thoughtfully to help clients see opportunities more clearly and
+                act with confidence.
               </p>
             </div>
 
