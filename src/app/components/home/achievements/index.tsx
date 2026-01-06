@@ -109,7 +109,7 @@ function Achievements() {
             <>
               <section className="w-full bg-background py-16 lg:py-24">
                 <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-                  <div className="mb-20 max-w-2xl">
+                  <div className="mb-15 max-w-2xl">
                     <h2 className="text-pretty mb-10 text-4xl tracking-tight sm:text-5xl">
                       Why Choose Shriox?
                     </h2>
@@ -123,7 +123,7 @@ function Achievements() {
                     </p>
                   </div>
 
-                  <div className="mb-16 mt-20">
+                  <div className="mb-6">
                     <h3 className=" text-3xl tracking-tight  sm:text-3xl">
                       What Sets Us Apart
                     </h3>
@@ -134,7 +134,7 @@ function Achievements() {
                     {features.map((feature, index) => (
                       <div
                         key={index}
-                        className="grid gap-8 md:grid-cols-2 md:gap-12 items-start pb-12 last:pb-0"
+                        className="grid gap-8 md:grid-cols-2 md:gap-12 items-start pb-4 last:pb-0"
                       >
                         {/* Timeline marker and number */}
                         <div className="relative md:sticky md:top-24">
@@ -207,7 +207,7 @@ function Achievements() {
               </section>
             </>
 
-            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+            {/* <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
               {achievementsList?.map((item: any, index: any) => {
                 return (
                   <motion.div {...bottomAnimation(index)} key={index}>
@@ -215,7 +215,7 @@ function Achievements() {
                   </motion.div>
                 );
               })}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

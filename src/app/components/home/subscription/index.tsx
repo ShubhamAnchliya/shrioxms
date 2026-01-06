@@ -55,10 +55,10 @@ function Subscription() {
                         <h2
                           className={`${items.text_color} dark:${items.text_color}`}>
                           {items.plan_price}
-                          <span
+                          {/* <span
                             className={`text-base text-${items.descp_color} ml-1`}>
                             /month
-                          </span>
+                          </span> */}
                         </h2>
                         <Link
                           href='/contact'
