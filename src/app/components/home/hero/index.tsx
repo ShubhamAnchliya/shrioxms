@@ -50,7 +50,8 @@ function HeroSection() {
                 />
               </h1> */}
 
-              <h1>
+              <h1 className=" 2xl:text-7xl 2xl:leading-[156px] md:text-5xl text-4xl font-medium text-dark_black dark:text-white text-center">
+                {/* @apply 2xl:text-9xl 2xl:leading-[156px] md:text-7xl text-5xl font-medium text-dark_black dark:text-white */}
                 {/* Line 1: Human-Centred Consulting, */}
                 <span className="block">
                   <TextGenerateEffect words="Human‑Centred Consulting," />
