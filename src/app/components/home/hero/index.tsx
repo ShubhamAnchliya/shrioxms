@@ -54,13 +54,13 @@ function HeroSection() {
                 {/* @apply 2xl:text-9xl 2xl:leading-[156px] md:text-7xl text-5xl font-medium text-dark_black dark:text-white */}
                 {/* Line 1: Human-Centred Consulting, */}
                 <span className="block">
-                  <TextGenerateEffect words="Human‑Centred Consulting," />
+                  <TextGenerateEffect words="Human‑Centred Consulting, Empowered by" />
                 </span>
 
                 {/* Line 2: Empowered by (Added delay so it starts after Line 1) */}
-                <span className="block">
+                {/* <span className="block">
                   <TextGenerateEffect words="Empowered by" delay={0.5} />
-                </span>
+                </span> */}
 
                 {/* Line 3: Smart Technology - AI (Existing styles preserved) */}
                 <span className="block">
