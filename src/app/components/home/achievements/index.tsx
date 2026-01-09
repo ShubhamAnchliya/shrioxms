@@ -107,7 +107,8 @@ function Achievements() {
             </div> */}
 
             <>
-              <section className="w-full bg-background py-16 lg:py-24">
+              <section className="w-full bg-background py-6 lg:py-10">
+                {/* py-16 lg:py-24 */}
                 <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
                   <div className="mb-15 max-w-2xl">
                     <h2 className="text-pretty mb-10 text-4xl tracking-tight sm:text-5xl">

@@ -50,7 +50,7 @@ function HeroSection() {
                 />
               </h1> */}
 
-              <h1 className=" 2xl:text-7xl 2xl:leading-[156px] md:text-5xl text-4xl font-medium text-dark_black dark:text-white text-center">
+              <h1 className=" 2xl:text-6xl 2xl:leading-[156px] md:text-5xl text-4xl font-medium text-dark_black dark:text-white text-center">
                 {/* @apply 2xl:text-9xl 2xl:leading-[156px] md:text-7xl text-5xl font-medium text-dark_black dark:text-white */}
                 {/* Line 1: Human-Centred Consulting, */}
                 <span className="block">
@@ -72,7 +72,10 @@ function HeroSection() {
                 </span>
               </h1>
 
-              <p className="max-w-3/5 text-dark_black/70 dark:text-white/70">
+              <p
+                className="max-w-4/5 text-dark_black/70 dark:text-white/70"
+                style={{ fontSize: "1.25rem" }}
+              >
                 At Shriox, we combine human insight with the selective use of
                 advanced tools like Artificial Intelligence. AI is never a
                 replacement for judgment — it’s a supportive force we use only

@@ -37,11 +37,8 @@ function Innovation() {
         <div className="container">
           <div className="flex flex-col gap-12">
             <div className="flex flex-col justify-center items-center gap-10 lg:gap-16">
-              <motion.div
-                {...bottomAnimation(1)}
-                className="max-w-(--breakpoint-Xsm) text-center"
-              >
-                <h2>
+              <motion.div {...bottomAnimation(1)} className="text-center">
+                <h2 style={{ fontSize: "4rem" }}>
                   {/* Where business vision becomes organizational excellence. */}
 
                   <TextGenerateEffect
@@ -49,7 +46,7 @@ function Innovation() {
                     delay={0.4}
                   />
                   <TextGenerateEffect
-                    words="organizational excellence"
+                    words="organizational experties"
                     delay={1}
                     className="italic font-normal instrument-font"
                   />
