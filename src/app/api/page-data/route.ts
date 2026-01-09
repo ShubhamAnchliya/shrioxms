@@ -170,7 +170,7 @@ const startupPlanList = [
     plan_price: "$4,500",
     icon_img: "/images/home/startupPlan/white_tick.svg",
     plan_feature: [
-      "100 hours of detailed assessment, process review, and optimization guidance",
+      "100 hours of detailed assessment, process review, and optimization guidance for Procurement, Inventory and Quality modules",
       "1 dedicated SPOC session per module (2 hr max per module)",
       "Actionable insights and industry best practices",
       "Recommendations to streamline your SCM operations",
@@ -185,7 +185,7 @@ const startupPlanList = [
     border_color: "border-white/10",
     plan_name: "Pro",
     plan_descp: "Comprehensive evaluation for all SCM modules",
-    plan_price: "",
+    plan_price: "Contact for Quote",
     icon_img: "/images/home/startupPlan/black_tick.svg",
     plan_feature: [
       "Procurement, Inventory, Quality, Order Management, Manufacturing & Logistics",
