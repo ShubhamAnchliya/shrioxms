@@ -21,12 +21,28 @@ function Innovation() {
   const inView = useInView(ref);
   const [innovationList, setinnovationList] = useState<any>(null);
 
-  const servicesData: ServiceCard[] = [
+  interface ServiceCard {
+    id: string;
+    title: string;
+    description: string;
+    icon: React.ReactNode;
+    colorTheme:
+      | "purple"
+      | "blue"
+      | "amber"
+      | "green"
+      | "indigo"
+      | "rose"
+      | "cyan"
+      | "teal";
+  }
+
+  const servicesData = [
     {
       id: "oracle-cloud",
       title: "Oracle Cloud Implementation",
       description:
-        "We specialize in seamless Oracle Cloud ERP implementations tailored to your business. From planning and configuration to deployment and optimization, Shriox ensures every step is aligned with industry best practices.",
+        "We specialize in seamless Oracle Cloud ERP implementations tailored to your business. From planning and configuration to deployment and optimization, Shriox ensures every step is aligned with industry best practices. With human expertise supported by AI driven insights, we accelerate timelines, reduce risks, and deliver clarity at every stage.",
       icon: <Cloud className="w-8 h-8" />,
       colorTheme: "purple",
     },
@@ -34,7 +50,7 @@ function Innovation() {
       id: "app-support",
       title: "Application & Service Support",
       description:
-        "Our support services go beyond troubleshooting. We act as your extended ERP team, providing proactive monitoring, issue resolution, and performance optimization.",
+        "Our support services go beyond troubleshooting. We act as your extended ERP team, providing proactive monitoring, issue resolution, and performance optimization. Whether it’s day to day queries or complex challenges, Shriox ensures your applications run smoothly and reliably.",
       icon: <Headphones className="w-8 h-8" />,
       colorTheme: "blue",
     },
@@ -42,7 +58,7 @@ function Innovation() {
       id: "second-opinion",
       title: "Second Opinion Services",
       description:
-        "Sometimes you just need a fresh perspective. Shriox offers independent reviews of your ERP strategies, implementations, or vendor proposals.",
+        "Sometimes you just need a fresh perspective. Shriox offers independent reviews of your ERP strategies, implementations, or vendor proposals. With our blend of human judgment and AI assisted analysis, we provide unbiased recommendations that help you make confident, informed decisions.",
       icon: <Lightbulb className="w-8 h-8" />,
       colorTheme: "amber",
     },
@@ -50,7 +66,7 @@ function Innovation() {
       id: "digital-transformation",
       title: "Digital Transformation",
       description:
-        "We help businesses embrace the future with confidence. Shriox guides you through automation, AI enabled analytics, and process modernization.",
+        "We help businesses embrace the future with confidence. Shriox guides you through automation, AI enabled analytics, and process modernization - always with a human centred approach. Our goal is to make technology work for you, simplifying complexity and unlocking new opportunities.",
       icon: <Zap className="w-8 h-8" />,
       colorTheme: "green",
     },
@@ -58,7 +74,7 @@ function Innovation() {
       id: "app-development",
       title: "Application Development",
       description:
-        "Shriox designs and develops custom applications that extend the power of your ERP ecosystem. From integrations to user friendly modules, our solutions are scalable and secure.",
+        "Shriox designs and develops custom applications that extend the power of your ERP ecosystem. From integrations to user friendly modules, our solutions are scalable and secure, and tailored to your unique requirements.",
       icon: <Code className="w-8 h-8" />,
       colorTheme: "indigo",
     },
@@ -66,7 +82,7 @@ function Innovation() {
       id: "advisory-consulting",
       title: "Management Advisory & Consulting",
       description:
-        "We provide strategic guidance to help you align ERP systems with business goals. Our advisory services cover process optimization, compliance, risk management, and governance.",
+        "We provide strategic guidance to help you align ERP systems with business goals. Our advisory services cover process optimization, compliance, risk management, and governance. By combining cultural understanding with modern tools, Shriox empowers leaders to make decisions that are both practical and future ready.",
       icon: <Briefcase className="w-8 h-8" />,
       colorTheme: "rose",
     },
@@ -74,7 +90,7 @@ function Innovation() {
       id: "testing-service",
       title: "Testing as a Service",
       description:
-        "Quality assurance is critical to ERP success. Our testing services combine human expertise with AI enabled tools to detect issues early and minimize downtime.",
+        "Quality assurance is critical to ERP success. Our testing services combine human expertise with AI enabled tools to detect issues early and minimize downtime, and ensure flawless performance. We provide end to end testing support, from functional validation to performance benchmarking.",
       icon: <CheckCircle2 className="w-8 h-8" />,
       colorTheme: "cyan",
     },
@@ -82,7 +98,7 @@ function Innovation() {
       id: "training-service",
       title: "Training as a Service",
       description:
-        "Knowledge empowers teams. Shriox offers structured training programs to help your workforce understand, adopt, and maximize ERP systems.",
+        "Knowledge empowers teams. Shriox offers structured training programs to help your workforce understand, adopt, and maximize ERP systems. Our training blends practical, hands on learning with AI assisted tools, ensuring your team gains both confidence and competence.",
       icon: <BookOpen className="w-8 h-8" />,
       colorTheme: "teal",
     },
@@ -256,7 +272,7 @@ function Innovation() {
                         </h3>
 
                         {/* Description */}
-                        <p className="text-sm text-foreground/70 leading-relaxed line-clamp-3 sm:line-clamp-none">
+                        <p className="text-sm text-foreground/70 leading-relaxed ">
                           {service.description}
                         </p>
                       </div>
