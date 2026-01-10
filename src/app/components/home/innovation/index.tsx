@@ -37,7 +37,7 @@ function Innovation() {
       | "teal";
   }
 
-  const servicesData = [
+  const servicesData: ServiceCard[] = [
     {
       id: "oracle-cloud",
       title: "Oracle Cloud Implementation",
