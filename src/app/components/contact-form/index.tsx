@@ -186,7 +186,7 @@ function ContactForm() {
                       What are you interested in?
                     </label>
                     <select
-                      className="w-full mt-2 text-base px-5 rounded-full py-3 border transition-all duration-500 dark:border-white/20 focus:outline-0 dark:bg-black/40"
+                      className="w-full mt-2 text-base px-5 rounded-full py-3.5 border transition-all duration-500 dark:border-white/20 focus:outline-0 dark:bg-black/40"
                       name="interest"
                       id="interest"
                       value={formData.interest}

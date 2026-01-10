@@ -4,11 +4,135 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { TextGenerateEffect } from "@/app/components/ui/text-generate-effect";
+import { cn } from "@/lib/utils";
+import {
+  Cloud,
+  Headphones,
+  Lightbulb,
+  Zap,
+  Code,
+  Briefcase,
+  CheckCircle2,
+  BookOpen,
+} from "lucide-react";
 
 function Innovation() {
   const ref = useRef(null);
   const inView = useInView(ref);
   const [innovationList, setinnovationList] = useState<any>(null);
+
+  const servicesData: ServiceCard[] = [
+    {
+      id: "oracle-cloud",
+      title: "Oracle Cloud Implementation",
+      description:
+        "We specialize in seamless Oracle Cloud ERP implementations tailored to your business. From planning and configuration to deployment and optimization, Shriox ensures every step is aligned with industry best practices.",
+      icon: <Cloud className="w-8 h-8" />,
+      colorTheme: "purple",
+    },
+    {
+      id: "app-support",
+      title: "Application & Service Support",
+      description:
+        "Our support services go beyond troubleshooting. We act as your extended ERP team, providing proactive monitoring, issue resolution, and performance optimization.",
+      icon: <Headphones className="w-8 h-8" />,
+      colorTheme: "blue",
+    },
+    {
+      id: "second-opinion",
+      title: "Second Opinion Services",
+      description:
+        "Sometimes you just need a fresh perspective. Shriox offers independent reviews of your ERP strategies, implementations, or vendor proposals.",
+      icon: <Lightbulb className="w-8 h-8" />,
+      colorTheme: "amber",
+    },
+    {
+      id: "digital-transformation",
+      title: "Digital Transformation",
+      description:
+        "We help businesses embrace the future with confidence. Shriox guides you through automation, AI enabled analytics, and process modernization.",
+      icon: <Zap className="w-8 h-8" />,
+      colorTheme: "green",
+    },
+    {
+      id: "app-development",
+      title: "Application Development",
+      description:
+        "Shriox designs and develops custom applications that extend the power of your ERP ecosystem. From integrations to user friendly modules, our solutions are scalable and secure.",
+      icon: <Code className="w-8 h-8" />,
+      colorTheme: "indigo",
+    },
+    {
+      id: "advisory-consulting",
+      title: "Management Advisory & Consulting",
+      description:
+        "We provide strategic guidance to help you align ERP systems with business goals. Our advisory services cover process optimization, compliance, risk management, and governance.",
+      icon: <Briefcase className="w-8 h-8" />,
+      colorTheme: "rose",
+    },
+    {
+      id: "testing-service",
+      title: "Testing as a Service",
+      description:
+        "Quality assurance is critical to ERP success. Our testing services combine human expertise with AI enabled tools to detect issues early and minimize downtime.",
+      icon: <CheckCircle2 className="w-8 h-8" />,
+      colorTheme: "cyan",
+    },
+    {
+      id: "training-service",
+      title: "Training as a Service",
+      description:
+        "Knowledge empowers teams. Shriox offers structured training programs to help your workforce understand, adopt, and maximize ERP systems.",
+      icon: <BookOpen className="w-8 h-8" />,
+      colorTheme: "teal",
+    },
+  ];
+
+  const colorClassMapSetup2: Record<
+    ServiceCard["colorTheme"],
+    { bg: string; text: string; icon: string }
+  > = {
+    purple: {
+      bg: "bg-purple-200 dark:bg-purple-900",
+      text: "text-purple-700 dark:text-purple-200",
+      icon: "text-purple-700 dark:text-purple-200",
+    },
+    blue: {
+      bg: "bg-blue-200 dark:bg-blue-900",
+      text: "text-blue-700 dark:text-blue-200",
+      icon: "text-blue-700 dark:text-blue-200",
+    },
+    amber: {
+      bg: "bg-amber-200 dark:bg-amber-900",
+      text: "text-amber-700 dark:text-amber-200",
+      icon: "text-amber-700 dark:text-amber-200",
+    },
+    green: {
+      bg: "bg-green-200 dark:bg-green-900",
+      text: "text-green-700 dark:text-green-200",
+      icon: "text-green-700 dark:text-green-200",
+    },
+    indigo: {
+      bg: "bg-indigo-200 dark:bg-indigo-900",
+      text: "text-indigo-700 dark:text-indigo-200",
+      icon: "text-indigo-700 dark:text-indigo-200",
+    },
+    rose: {
+      bg: "bg-rose-200 dark:bg-rose-900",
+      text: "text-rose-700 dark:text-rose-200",
+      icon: "text-rose-700 dark:text-rose-200",
+    },
+    cyan: {
+      bg: "bg-cyan-200 dark:bg-cyan-900",
+      text: "text-cyan-700 dark:text-cyan-200",
+      icon: "text-cyan-700 dark:text-cyan-200",
+    },
+    teal: {
+      bg: "bg-teal-200 dark:bg-teal-900",
+      text: "text-teal-700 dark:text-teal-200",
+      icon: "text-teal-700 dark:text-teal-200",
+    },
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,13 +170,14 @@ function Innovation() {
                     delay={0.4}
                   />
                   <TextGenerateEffect
-                    words="organizational experties"
+                    words="organizational excellence"
                     delay={1}
                     className="italic font-normal instrument-font"
                   />
                 </h2>
               </motion.div>
-              <div ref={ref} className="w-full">
+
+              {/* <div ref={ref} className="w-full">
                 <div className="grid auto-rows-max grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-6 w-full">
                   {innovationList?.map((items: any, index: any) => {
                     return (
@@ -99,9 +224,49 @@ function Innovation() {
                     );
                   })}
                 </div>
+              </div> */}
+
+              {/* Services Grid */}
+              {/* <div className="w-full bg-background text-foreground py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300"> */}
+              <div className="max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {servicesData.map((service) => {
+                    const colors = colorClassMapSetup2[service.colorTheme];
+                    return (
+                      <div
+                        key={service.id}
+                        className={cn(
+                          "rounded-2xl p-8 flex flex-col justify-start transition-all duration-300 hover:shadow-lg hover:scale-105 cursor-pointer",
+                          colors.bg
+                        )}
+                      >
+                        {/* Icon */}
+                        <div className={cn("mb-6 w-8 h-8", colors.icon)}>
+                          {service.icon}
+                        </div>
+
+                        {/* Title */}
+                        <h3
+                          className={cn(
+                            "text-xl sm:text-2xl font-semibold mb-3",
+                            colors.text
+                          )}
+                        >
+                          {service.title}
+                        </h3>
+
+                        {/* Description */}
+                        <p className="text-sm text-foreground/70 leading-relaxed line-clamp-3 sm:line-clamp-none">
+                          {service.description}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
+              {/* </div> */}
             </div>
-            <div className="flex flex-col gap-4 xl:flex xl:flex-row bg-dark_black items-center justify-between dark:bg-white/5 py-8 px-7 sm:px-12 rounded-3xl w-full">
+            {/* <div className="flex flex-col gap-4 xl:flex xl:flex-row bg-dark_black items-center justify-between dark:bg-white/5 py-8 px-7 sm:px-12 rounded-3xl w-full">
               <h4 className="text-white text-center xl:text-left">
                 See Our Work in Action.
                 <br /> Start Your Creative Journey with Us!
@@ -165,7 +330,7 @@ function Innovation() {
                   </svg>
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
