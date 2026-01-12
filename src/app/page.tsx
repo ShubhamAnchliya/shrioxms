@@ -10,6 +10,7 @@ import OnlinePresence from "./components/home/online-presence";
 import Solutions from "./components/home/solution";
 import Subscription from "./components/home/subscription";
 import WebResult from "./components/home/web-result";
+import Career from "./components/career";
 
 export const metadata: Metadata = {
   // title: "Awake Agency",
@@ -58,6 +59,10 @@ export default function Home() {
       {/* ---------------------Subscription section (Price/plan) Starts-----------------  */}
       <Subscription />
       {/* ---------------------Subscription section Ends-----------------  */}
+
+      {/* ---------------------Career  section Starts-----------------  */}
+      <Career />
+      {/* ---------------------Career section Ends-----------------  */}
 
       {/* ---------------------Faq section Starts-----------------  */}
       <Faq />
