@@ -273,14 +273,11 @@ function Innovation() {
                         </h3>
 
                         {/* Description */}
-                        {/* <p className="text-sm text-foreground/70 leading-relaxed ">
-                          {service.description}
-                        </p> */}
-
-                        <p className={cn(
-                          "text-sm text-foreground/70 leading-relaxed",
-                        colors.text
-                        )}                                                
+                        <p
+                          className={cn(
+                            "text-sm text-foreground/70 leading-relaxed",
+                            colors.text
+                          )}
                         >
                           {service.description}
                         </p>

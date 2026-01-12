@@ -39,23 +39,23 @@ export default function Home() {
       <Innovation />
       {/* ---------------------Innovation section Ends-----------------  */}
 
-      {/* ---------------------Online presence section Starts-----------------  */}
-      <OnlinePresence />
+      {/* ---------------------Online presence section (work) Starts-----------------  */}
+      {/* <OnlinePresence /> */}
       {/* ---------------------Online presence section Ends-----------------  */}
 
-      {/* ---------------------Web result section (about us)Starts-----------------  */}
+      {/* ---------------------Web result section (about us) Starts-----------------  */}
       <WebResult />
       {/* ---------------------Web result section Ends-----------------  */}
 
       {/* ---------------------Creative mind section (team) Starts-----------------  */}
-      <CreativeMind />
+      {/* <CreativeMind /> */}
       {/* ---------------------Creative mind section Ends-----------------  */}
 
-      {/* ---------------------Customer Stories section Starts-----------------  */}
-      <CustomerStories />
+      {/* ---------------------Customer Stories section (customer review) Starts-----------------  */}
+      {/* <CustomerStories /> */}
       {/* ---------------------Customer Stories section Ends-----------------  */}
 
-      {/* ---------------------Subscription section Starts-----------------  */}
+      {/* ---------------------Subscription section (Price/plan) Starts-----------------  */}
       <Subscription />
       {/* ---------------------Subscription section Ends-----------------  */}
 
@@ -67,7 +67,7 @@ export default function Home() {
       {/* <Achievements /> */}
       {/* ---------------------Achievements section Ends-----------------  */}
 
-      {/* ---------------------Solutions section Starts-----------------  */}
+      {/* ---------------------Solutions section (our promise) Starts-----------------  */}
       <Solutions />
       {/* ---------------------Solutions section Ends-----------------  */}
     </main>
