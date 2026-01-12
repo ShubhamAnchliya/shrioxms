@@ -171,6 +171,7 @@ function Innovation() {
     animate: inView ? { y: 0, opacity: 1 } : { y: "25%", opacity: 0 },
     transition: { duration: 0.3, delay: 0.3 + index * 0.3 },
   });
+
   return (
     <section id="services">
       <div ref={ref} className="2xl:py-20 py-11">
@@ -272,7 +273,15 @@ function Innovation() {
                         </h3>
 
                         {/* Description */}
-                        <p className="text-sm text-foreground/70 leading-relaxed ">
+                        {/* <p className="text-sm text-foreground/70 leading-relaxed ">
+                          {service.description}
+                        </p> */}
+
+                        <p className={cn(
+                          "text-sm text-foreground/70 leading-relaxed",
+                        colors.text
+                        )}                                                
+                        >
                           {service.description}
                         </p>
                       </div>
