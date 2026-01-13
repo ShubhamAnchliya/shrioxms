@@ -5,7 +5,8 @@ import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
 import { TextGenerateEffect } from "@/app/components/ui/text-generate-effect";
 import { Users, Zap, Brain, Shield, Sparkles } from "lucide-react";
-import aboutUsImage from "../../../../../public/images/home/aboutUs/diverse-business-meeting.png";
+// import aboutUsImage from "../../../../../public/images/home/aboutUs/diverse-business-meeting.png";
+import aboutUsImage from "../../../../../public/images/logo/sms_office3.jpg";
 
 // public/images/home/aboutUs/diverse-business-meeting.png"
 
@@ -147,6 +148,7 @@ function WebResult() {
                       src={aboutUsImage}
                       alt="Diverse team in business meeting"
                       className="w-full h-full object-cover"
+                     
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                   </div>
