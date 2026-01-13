@@ -93,7 +93,7 @@ function Career() {
           <div className="container">
             <div
               ref={ref}
-              className="py-15 md:py-15 px-20  rounded-3xl bg-gradient-to-br from-[#C2FFD8] to-[#465EFB] backdrop-blur-[200px] dark:opacity-80"
+              className="py-15 md:py-15 px-20  rounded-3xl bg-[linear-gradient(to_top,#304352,#d7d2cc)] backdrop-blur-[200px] dark:opacity-80"
             >
               <motion.div
                 {...bottomAnimation}
@@ -101,9 +101,9 @@ function Career() {
               >
                 <div className="flex flex-col gap-3 items-center text-center">
                   <h2 className="text-3xl md:text-6xl dark:text-dark_black">
-                    Be Part of the SHRIOX Growth Story
+                    Be Part of the ShrioxMS Growth Story
                   </h2>
-                  <p className="dark:text-dark_black">
+                  <p className="text-[1.5rem] text-white/85 dark:text-white">
                     We don’t just offer jobs; we offer pathways to excellence
                     and continuous professional development.
                   </p>
