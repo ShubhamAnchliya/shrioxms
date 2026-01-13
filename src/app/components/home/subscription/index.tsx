@@ -23,14 +23,14 @@ function Subscription() {
   }, []);
   return (
     <section id="pricing">
-      <div className="2xl:py-20 py-11">
+      <div className="2xl:py-20 py-12">
         <div className="container">
-          <div className="flex flex-col gap-10 md:gap-20">
+          <div className="flex flex-col gap-10 md:gap-12">
             <div className="max-w-25 text-center mx-auto">
-              <h2>
+              <h2 className="text-[2.75rem]">
                 <TextGenerateEffect words="Pick the plan that fits your" />
                 <TextGenerateEffect
-                  words="start-up"
+                  words="Organization"
                   delay={1.2}
                   className="italic font-normal instrument-font"
                 />
@@ -39,7 +39,7 @@ function Subscription() {
             <div className="grid grid-cols-1 xxl:grid-cols-2 gap-6">
               {startupPlanList?.map((items: any, index: number) => (
                 <div
-                  className={`${items.plan_bg_color} p-6 md:p-10 rounded-2xl`}
+                  className={`${items.plan_bg_color} p-6 md:p-8 rounded-2xl`}
                   key={index}
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

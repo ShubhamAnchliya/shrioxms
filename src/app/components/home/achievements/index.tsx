@@ -160,7 +160,7 @@ function Achievements() {
                               </h3>
                               <p
                                 className="
-                              text-slate-600 dark:text-slate-300 text-sm leading-relaxed
+                              text-slate-600 dark:text-slate-300 text-base leading-relaxed
                               "
                               >
                                 {feature.description}
@@ -181,7 +181,7 @@ function Achievements() {
                           </h3>
                           <p
                             className="
-                          text-slate-600 dark:text-slate-300 text-sm leading-relaxed
+                          text-slate-600 dark:text-slate-300 text-base leading-relaxed
                           "
                           >
                             {feature.description}

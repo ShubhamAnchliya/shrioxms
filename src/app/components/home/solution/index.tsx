@@ -30,7 +30,7 @@ function Solutions() {
                 <h2 className="text-3xl md:text-5xl dark:text-dark_black">
                   Our Promise
                 </h2>
-                <p className="dark:text-dark_black">
+                <p className="text-[1.3rem] dark:text-dark_black">
                   With Shriox, you gain more than a consultant — you gain a
                   partner who understands your challenges, empowers your
                   decisions, and ensures your ERP ecosystem works seamlessly,

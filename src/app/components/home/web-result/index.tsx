@@ -139,7 +139,7 @@ function WebResult() {
           </div> */}
 
           <div>
-            <section className="relative overflow-hidden py-24 px-6">
+            <section className="relative overflow-hidden py-18 px-6">
               <div className="max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                   {/* Image */}
@@ -148,7 +148,6 @@ function WebResult() {
                       src={aboutUsImage}
                       alt="Diverse team in business meeting"
                       className="w-full h-full object-cover"
-                     
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                   </div>
@@ -171,10 +170,10 @@ function WebResult() {
             {/* Values Grid Section */}
             {/* <section className="py-24 px-6 bg-slate-50 dark:bg-slate-900/50"> */}
             {/* py-16 md:py-28 px-6 border border-dark_black/10 rounded-3xl bg-[linear-gradient(90deg,#CDEFFB_0%,#FFFFFF_33.23%,#FFFFFF_65.77%,#FDEECB_100%)] backdrop-blur-[200px] dark:opacity-80 */}
-            <section className="py-20 px-6 border border-dark_black/10 rounded-3xl bg-dark_black/5 dark:bg-white/5">
+            <section className="w-fit mx-auto py-10 px-6 border border-dark_black/10 rounded-3xl bg-dark_black/5 dark:bg-white/5">
               <div className="max-w-6xl mx-auto">
-                <h3 className="text-center mb-16">Our Approach</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <h3 className="text-center mb-10">Our Approach</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
                   {values.map((value, index) => {
                     const Icon = value.icon;
                     return (
@@ -188,7 +187,7 @@ function WebResult() {
                         <h4 className="text-xl font-semibold text-slate-900 dark:text-white mb-3">
                           {value.title}
                         </h4>
-                        <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                        <p className="text-slate-600 dark:text-slate-300 text-[15px] leading-relaxed">
                           {value.description}
                         </p>
                       </div>

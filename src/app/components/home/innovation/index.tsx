@@ -275,7 +275,7 @@ function Innovation() {
                         {/* Description */}
                         <p
                           className={cn(
-                            "text-sm text-foreground/70 leading-relaxed",
+                            "text-[15px] text-foreground/70 leading-relaxed",
                             colors.text
                           )}
                         >
