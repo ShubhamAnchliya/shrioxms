@@ -4,6 +4,14 @@ import Link from "next/link";
 import { useState } from "react";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 
+interface FormErrors {
+  name?: string;
+  companyName?: string;
+  email?: string;
+  interest?: string;
+  message?: string;
+}
+
 function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -12,6 +20,10 @@ function ContactForm() {
     interest: "",
     message: "",
   });
+
+  const [errors, setErrors] = useState<FormErrors>({});
+
+  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const interests = [
     { label: "Oracle Implementation", value: "Oracle Implementation" },
@@ -24,16 +36,102 @@ function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loader, setLoader] = useState(false);
 
+  // Validation Logic
+  const validateForm = () => {
+    let tempErrors: FormErrors = {};
+    let isValid = true;
+
+    if (!formData.name.trim()) {
+      tempErrors.name = "Name is required";
+      isValid = false;
+    }
+    if (!formData.companyName.trim()) {
+      tempErrors.companyName = "Company Name is required";
+      isValid = false;
+    }
+    if (!formData.email.trim()) {
+      tempErrors.email = "Email is required";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      // Basic email format check
+      tempErrors.email = "Email is invalid";
+      isValid = false;
+    }
+    if (!formData.interest) {
+      tempErrors.interest = "Please select an interest";
+      isValid = false;
+    }
+    if (!formData.message.trim()) {
+      tempErrors.message = "Message is required";
+      isValid = false;
+    }
+
+    setErrors(tempErrors);
+    return isValid;
+  };
+
+  // const handleChange = (e: any) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     [name]: value,
+  //   }));
+  // };
+
   const handleChange = (e: any) => {
     const { name, value } = e.target;
+
+    // Update data
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
+
+    // Clear error for this field as the user types
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: undefined,
+      }));
+    }
   };
+
+  // const handleSubmit = async (e: any) => {
+  //   e.preventDefault();
+  //   setLoader(true);
+
+  //   try {
+  //     const response = await fetch("/api/contact", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     const data = await response.json();
+  //     console.log("front", formData);
+  //     if (data.success) {
+  //       setSubmitted(true);
+  //     } else {
+  //       alert("Failed to send email");
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //     alert("Something went wrong");
+  //   } finally {
+  //     setLoader(false);
+  //   }
+  // };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
+    // Run validation before submitting
+    if (!validateForm()) {
+      return; // Stop submission if validation fails
+    }
+
     setLoader(true);
 
     try {
@@ -49,6 +147,7 @@ function ContactForm() {
       console.log("front", formData);
       if (data.success) {
         setSubmitted(true);
+        setErrors({}); // Clear errors on success
       } else {
         alert("Failed to send email");
       }
@@ -132,7 +231,7 @@ function ContactForm() {
                 className="flex flex-col bg-white dark:bg-dark_black rounded-2xl p-8 gap-8"
               >
                 <div className="flex flex-col md:flex md:flex-row gap-6">
-                  <div className="w-full">
+                  {/* <div className="w-full">
                     <label htmlFor="name">Your Name</label>
                     <input
                       className="w-full mt-2 rounded-full border px-5 py-3 outline-hidden transition dark:border-white/20
@@ -144,8 +243,32 @@ function ContactForm() {
                       onChange={handleChange}
                       placeholder="Enter your name"
                     />
-                  </div>
+                  </div> */}
                   <div className="w-full">
+                    <label htmlFor="name">Your Name</label>
+                    <input
+                      className={`w-full mt-2 rounded-full border px-5 py-3 outline-hidden transition 
+                        focus:border-dark_black/50 dark:focus:border-white/50 dark:bg-black/40
+                        ${
+                          errors.name
+                            ? "border-red-500"
+                            : "dark:border-white/20"
+                        }`}
+                      id="name"
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Enter your name"
+                    />
+                    {errors.name && (
+                      <span className="text-red-500 text-sm mt-1 ml-2">
+                        {errors.name}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* <div className="w-full">
                     <label htmlFor="name">Company Name</label>
                     <input
                       className="w-full mt-2 rounded-full border px-5 py-3 outline-hidden transition dark:border-white/20
@@ -157,9 +280,32 @@ function ContactForm() {
                       onChange={handleChange}
                       placeholder="Enter your company name"
                     />
+                  </div> */}
+                  <div className="w-full">
+                    <label htmlFor="name">Company Name</label>
+                    <input
+                      className={`w-full mt-2 rounded-full border px-5 py-3 outline-hidden transition 
+                        focus:border-dark_black/50 dark:focus:border-white/50 dark:bg-black/40
+                        ${
+                          errors.companyName
+                            ? "border-red-500"
+                            : "dark:border-white/20"
+                        }`}
+                      id="companyName"
+                      type="text"
+                      name="companyName"
+                      value={formData.companyName}
+                      onChange={handleChange}
+                      placeholder="Enter your company name"
+                    />
+                    {errors.companyName && (
+                      <span className="text-red-500 text-sm mt-1 ml-2">
+                        {errors.companyName}
+                      </span>
+                    )}
                   </div>
                 </div>
-                <div className="flex flex-col md:flex md:flex-row gap-6">
+                {/* <div className="flex flex-col md:flex md:flex-row gap-6">
                   <div className="w-full">
                     <label htmlFor="email">Work Email</label>
                     <input
@@ -194,8 +340,64 @@ function ContactForm() {
                       ))}
                     </select>
                   </div>
+                </div> */}
+                <div className="flex flex-col md:flex md:flex-row gap-6">
+                  <div className="w-full">
+                    <label htmlFor="email">Work Email</label>
+                    <input
+                      className={`w-full mt-2 rounded-full border px-5 py-3 outline-hidden transition 
+                        focus:border-dark_black/50 dark:focus:border-white/50 dark:bg-black/40
+                        ${
+                          errors.email
+                            ? "border-red-500"
+                            : "dark:border-white/20"
+                        }`}
+                      id="email"
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Enter your work email"
+                    />
+                    {errors.email && (
+                      <span className="text-red-500 text-sm mt-1 ml-2">
+                        {errors.email}
+                      </span>
+                    )}
+                  </div>
+                  <div className="w-full">
+                    <label htmlFor="interest">
+                      What are you interested in?
+                    </label>
+                    <select
+                      className={`w-full mt-2 text-base px-5 rounded-full py-3.5 border transition-all duration-500  focus:outline-0 dark:bg-black/40
+                        ${
+                          errors.interest
+                            ? "border-red-500"
+                            : "dark:border-white/20"
+                        }`}
+                      name="interest"
+                      id="interest"
+                      value={formData.interest}
+                      onChange={handleChange}
+                    >
+                      <option value="" disabled>
+                        Select Interest
+                      </option>
+                      {interests.map((interest) => (
+                        <option key={interest.value} value={interest.value}>
+                          {interest.label}
+                        </option>
+                      ))}
+                    </select>
+                    {errors.interest && (
+                      <span className="text-red-500 text-sm mt-1 ml-2">
+                        {errors.interest}
+                      </span>
+                    )}
+                  </div>
                 </div>
-                <div className="w-full">
+                {/* <div className="w-full">
                   <label htmlFor="message">Message</label>
                   <textarea
                     className="w-full mt-2 rounded-3xl border px-5 py-3 outline-hidden transition dark:border-white/20
@@ -207,6 +409,29 @@ function ContactForm() {
                     placeholder="Let tell us know your project about"
                     rows={4}
                   />
+                </div> */}
+                <div className="w-full">
+                  <label htmlFor="message">Message</label>
+                  <textarea
+                    className={`w-full mt-2 rounded-3xl border px-5 py-3 outline-hidden transition 
+                      focus:border-dark_black/50 dark:focus:border-white/50 dark:bg-black/40
+                      ${
+                        errors.message
+                          ? "border-red-500"
+                          : "dark:border-white/20"
+                      }`}
+                    name="message"
+                    id="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Let tell us know your project about"
+                    rows={4}
+                  />
+                  {errors.message && (
+                    <span className="text-red-500 text-sm mt-1 ml-2">
+                      {errors.message}
+                    </span>
+                  )}
                 </div>
                 <div>
                   {!loader ? (
