@@ -11,7 +11,7 @@ const Logo: React.FC<HeaderProps> = () => {
         width={110}
         height={34}
         style={{ width: "8rem", height: "5rem", marginLeft: "2rem" }}
-        quality={100}
+        // quality={100}
         priority={true}
         className="dark:hidden"
       />
@@ -25,7 +25,7 @@ const Logo: React.FC<HeaderProps> = () => {
         // height={34}
         // style={{ width: "auto", height: "auto" }}
         style={{ width: "8rem", height: "5rem", marginLeft: "2rem" }}
-        quality={100}
+        // quality={100}
         className="dark:block hidden"
       />
     </Link>

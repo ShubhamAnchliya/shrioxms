@@ -32,40 +32,32 @@ function ContactForm() {
     }));
   };
 
-  const reset = () => {
-    formData.name = "";
-    formData.companyName = "";
-    formData.email = "";
-    formData.interest = "";
-    formData.message = "";
-  };
-
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setLoader(true);
-    // fetch("https://formsubmit.co/ajax/info@shrioxms.com", {
 
-    fetch("https://formsubmit.co/ajax/info@shubhamanchliya@gmail.com", {
-      method: "POST",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        name: formData.name,
-        companyName: formData.companyName,
-        email: formData.email,
-        interest: formData.interest,
-        message: formData.message,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-
-        setSubmitted(data.success);
-        reset();
-      })
-      .catch((error) => {
-        console.log(error.message);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
+
+      const data = await response.json();
+      console.log("front", formData);
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        alert("Failed to send email");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong");
+    } finally {
+      setLoader(false);
+    }
   };
 
   return (
@@ -202,19 +194,6 @@ function ContactForm() {
                       ))}
                     </select>
                   </div>
-                  {/* <div className='w-full'>
-                    <label htmlFor='budget'>Project budget</label>
-                    <select
-                      className='w-full mt-2 text-base px-4 rounded-full py-2.5 border transition-all duration-500 dark:text-white border-solid dark:border-white/20 focus:outline-0 dark:bg-black/40'
-                      name='budget'
-                      id='budget'
-                      value={formData.budget}
-                      onChange={handleChange}>
-                      <option value=''>Select your budget</option>
-                      <option value='$10000'>$10,000</option>
-                      <option value='$50500'>$50,500</option>
-                    </select>
-                  </div> */}
                 </div>
                 <div className="w-full">
                   <label htmlFor="message">Message</label>
