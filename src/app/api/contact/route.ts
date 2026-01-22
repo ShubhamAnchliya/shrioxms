@@ -1,87 +1,84 @@
-// import { Resend } from "resend";
-// import { NextResponse } from "next/server";
+//  resend
 
-// const resend = new Resend(process.env.RESEND_API_KEY);
+import { Resend } from "resend";
+import { NextResponse } from "next/server";
 
-// export async function POST(req: Request) {
-//   try {
-//     const body = await req.json();
-//     const { name, companyName, email, interest, message } = body;
-//     console.log("server data", name, companyName, email, interest, message);
-//     if (!name || !companyName || !email || !interest || !message) {
-//       return NextResponse.json(
-//         { success: false, message: "Missing required fields" },
-//         { status: 400 }
-//       );
-//     }
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-//     await resend.emails.send({
-//       from: "Contact Form <onboarding@resend.dev>",
-//       to: [process.env.RECEIVER_EMAIL!],
-//       subject: `New Enquiry from ${name}`,
-//       html: `
-//         <h3>New Enquiry Request</h3>
-//         <p><strong>Name:</strong> ${name}</p>
-//         <p><strong>Company:</strong> ${companyName}</p>
-//         <p><strong>Email:</strong> ${email}</p>
-//         <p><strong>Interest:</strong> ${interest}</p>
-//         <p><strong>Message:</strong></p>
-//         <p>${message}</p>
-//       `,
-//     });
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+    const { name, companyName, email, interest, message } = body;
+    console.log("server data", name, companyName, email, interest, message);
+    
+    if (!name || !companyName || !email || !interest || !message) {
+      return NextResponse.json(
+        { success: false, message: "Missing required fields" },
+        { status: 400 },
+      );
+    }
 
-//     return NextResponse.json({ success: true });
-//   } catch (error) {
-//     // route.ts
-//     console.error("Resend Error:", JSON.stringify(error, null, 2));
-//     return NextResponse.json(
-//       { success: false, message: "Email sending failed" },
-//       { status: 500 }
-//     );
-//   }
-//   // catch (error) {
-//   //   console.error(error);
-//   //   return NextResponse.json(
-//   //     { success: false, message: "Email sending failed" },
-//   //     { status: 500 }
-//   //   );
-//   // }
-// }
+    await resend.emails.send({
+      from: "Contact Form <onboarding@resend.dev>",
+      to: [process.env.RECEIVER_EMAIL!],
+      subject: `New Enquiry from ${name}`,
+      html: `
+        <h3>New Enquiry Request</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Company:</strong> ${companyName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Interest:</strong> ${interest}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    });
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    // route.ts
+    console.error("Resend Error:", JSON.stringify(error, null, 2));
+    return NextResponse.json(
+      { success: false, message: "Email sending failed" },
+      { status: 500 },
+    );
+  } 
+}
 
 // working gmail nodemailer
 
-import nodemailer from "nodemailer";
-import { NextResponse } from "next/server";
+// import nodemailer from "nodemailer";
+// import { NextResponse } from "next/server";
 
-export async function POST(req: Request) {
-  const { name, companyName, email, interest, message } = await req.json();
+// export async function POST(req: Request) {
+//   const { name, companyName, email, interest, message } = await req.json();
 
-  console.log("EMAIL_USER:", process.env.EMAIL_USER);
+//   console.log("EMAIL_USER:", process.env.EMAIL_USER);
 
-  console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "OK" : "MISSING");
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-  });
+//   console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "OK" : "MISSING");
+//   const transporter = nodemailer.createTransport({
+//     service: "gmail",
+//     auth: {
+//       user: process.env.EMAIL_USER,
+//       pass: process.env.EMAIL_PASS,
+//     },
+//   });
 
-  await transporter.sendMail({
-    to: process.env.RECEIVER_EMAIL,
-    subject: "New Enquiry Request",
-    html: `
-      <p>Name: ${name}</p>
-      <p>Company: ${companyName}</p>
-      <p>Email: ${email}</p>
-      <p>Interest: ${interest}</p>
-      <p>Message: ${message}</p>
-    `,
-  });
+//   await transporter.sendMail({
+//     to: process.env.RECEIVER_EMAIL,
+//     subject: "New Enquiry Request",
+//     html: `
+//       <p>Name: ${name}</p>
+//       <p>Company: ${companyName}</p>
+//       <p>Email: ${email}</p>
+//       <p>Interest: ${interest}</p>
+//       <p>Message: ${message}</p>
+//     `,
+//   });
 
-  return NextResponse.json({ success: true });
-}
+//   return NextResponse.json({ success: true });
+// }
 
+// nodemailer
 // import { NextResponse } from "next/server";
 // import nodemailer from "nodemailer";
 
