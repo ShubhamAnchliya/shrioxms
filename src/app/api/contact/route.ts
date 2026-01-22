@@ -9,8 +9,9 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const { name, companyName, email, interest, message } = body;
-    console.log("server data", name, companyName, email, interest, message);
     
+    console.log("server data", name, companyName, email, interest, message);
+
     if (!name || !companyName || !email || !interest || !message) {
       return NextResponse.json(
         { success: false, message: "Missing required fields" },
@@ -18,6 +19,8 @@ export async function POST(req: Request) {
       );
     }
 
+    
+    
     await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
       to: [process.env.RECEIVER_EMAIL!],
@@ -41,7 +44,7 @@ export async function POST(req: Request) {
       { success: false, message: "Email sending failed" },
       { status: 500 },
     );
-  } 
+  }
 }
 
 // working gmail nodemailer
